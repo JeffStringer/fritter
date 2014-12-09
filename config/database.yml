@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: fritter_development
+
+test:
+  adapter: postgresql
+  database: fritter_test
