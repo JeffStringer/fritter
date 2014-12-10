@@ -3,6 +3,10 @@
 /* universal */
 
 .container {
-  width: 1100px;
+  width: 1000px;
   margin: 0 auto;
+}
+
+form input[type='text'] {
+  width: 100%;
 }

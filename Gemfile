@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'bcrypt'
 gem 'rb-readline'
 gem 'rest-client'
+gem 'angularjs-rails'
 
 group :development do
   gem 'better_errors'
