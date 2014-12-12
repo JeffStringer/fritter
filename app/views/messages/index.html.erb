@@ -5,7 +5,8 @@
     <input type="text" ng-model="newMessage.text">
   </form>
 
-  {{newMessage.text}}
-
+    <p ng-repeat="message in messages">
+    {{message.text}}
+    </p>
 </div>
 
