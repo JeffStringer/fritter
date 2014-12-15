@@ -6,7 +6,6 @@
   padding-top: 20px;
   width: 800px;
   margin: 0 auto;
-  border: solid red;
   height: 1000px;
   background-color: white;
 }
@@ -15,17 +14,23 @@ body {
   background-color: red;
 }
 
-input#message-fweet {
-  width: 600px;
+form.form-inline {
+  padding-left: 16px;
+  padding-top: 13px;
+  background-color: blue;
+  height: 60px;
 }
 
-form input[type='text'] {
-  width: 100%;
-  margin-bottom: 5px;
+input#message-fweet {
+  width: 628px;
 }
 
 #add-message.btn {
   background-color: orange;
   color: white;
   margin-bottom: 10px;
+}
+
+div.col-md-12 {
+  padding: 0 auto;
 }
