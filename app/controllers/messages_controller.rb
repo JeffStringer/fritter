@@ -11,7 +11,6 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new
     @message.fweet = params[:message]
-    # @student.name = params[:studentName]
 
     if @message.save
       respond_to do |format|
