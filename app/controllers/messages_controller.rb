@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new
+    @message.user_id = current_user.id
     @message.fweet = params[:message]
 
     if @message.save

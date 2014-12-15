@@ -15,14 +15,15 @@ body {
 }
 
 form.form-inline {
-  padding-left: 16px;
+  padding-left: 1px;
+  margin-left: 15px;
   padding-top: 13px;
   background-color: blue;
   height: 60px;
 }
 
 input#message-fweet {
-  width: 628px;
+  width: 648px;
 }
 
 #add-message.btn {
