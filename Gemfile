@@ -8,11 +8,13 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
+gem 'angular-rails-templates'
+gem 'angularjs-rails'
+gem 'simple_form'
 gem 'bcrypt'
 gem 'rb-readline'
-gem 'rest-client'
-gem 'angularjs-rails'
+gem 'devise'
+gem 'pry'
 
 group :development do
   gem 'better_errors'
@@ -23,12 +25,11 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'dotenv-rails'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
-  gem 'pry'
+  gem 'poltergeist'
 end

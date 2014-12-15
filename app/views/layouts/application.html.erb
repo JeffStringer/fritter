@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="Messages">
+<html ng-app="messageList">
 <head>
   <title>Fritter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="container">
-    <%= yield %>
-  </div>
-</body>
+    <%= stylesheet_link_tag  'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>  
+  </body>
 </html>
