@@ -7,16 +7,14 @@ messageList.controller('MessageCtrl', function MessageController($scope, Message
     MessagesFactory.getMessages()
       .success(function(data) {
         $scope.messages = data;
-    })
+    });
   })();
 
   $scope.addMessage = function() {
     MessagesFactory.addMessage (MessagesFactory.message)
       .success(function(data) {
-      $scope.messages.push({fweet: MessagesFactory.message});
-      console.log($scope.messages);
-      console.log(MessagesFactory.message);
+      $scope.messages.push({fweet: MessagesFactory.message}, {date: MessagesFactory.message});
        MessagesFactory.message = null;
-    })
+    });
   }
 });

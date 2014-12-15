@@ -3,8 +3,20 @@
 /* universal */
 
 .container {
-  width: 1000px;
+  padding-top: 20px;
+  width: 800px;
   margin: 0 auto;
+  border: solid red;
+  height: 1000px;
+  background-color: white;
+}
+
+body {
+  background-color: red;
+}
+
+input#message-fweet {
+  width: 600px;
 }
 
 form input[type='text'] {

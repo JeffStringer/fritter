@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="col-md-4">
-    <h2>New Message</h2>
+  <div class="col-md-12">
     <form ng-submit="addMessage()" class="form-inline" role="form">
       <button type="submit" class="btn btn-default">Submit</button>
       <div class="form-group">
@@ -9,10 +8,11 @@
     </form>
   </div>
   <div class="col-md-12">
-    <h2 ng-show="messages.length && filtered.length">Message List</h2>
+    <h2 ng-show="messages.length && filtered.length">Fweets</h2>
     <h2 ng-show="messages.length && !filtered.length">No Matches</h2>
       <p ng-repeat="item in filtered = (messages | filter:query)">
         <span>{{item.fweet}}, {{item.created_at}}</span>
       </p>
   </div>
 </div>
+
