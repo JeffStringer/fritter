@@ -10,9 +10,8 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new
-    # @message.user_id = current_user.id
+    @message.user_id = current_user.id
     @message.fweet = params[:message]
-    binding.pry
 
     if @message.save
       respond_to do |format|
@@ -64,6 +63,6 @@ class MessagesController < ApplicationController
 private
 
   def message_params
-    params.require(:message).permit(:message, :id, :fweet)
+    params.require(:message).permit(:user_id, :message, :id, :fweet)
   end
 end

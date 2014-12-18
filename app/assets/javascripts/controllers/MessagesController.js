@@ -13,8 +13,8 @@ messageList.controller('MessageCtrl', function MessageController($scope, Message
   $scope.addMessage = function() {
     MessagesFactory.addMessage (MessagesFactory.message)
       .success(function(data) {
-      $scope.messages.push({fweet: MessagesFactory.message}, {date: MessagesFactory.message});
-       MessagesFactory.message = null;
-    });
+        $scope.messages.push({fweet: MessagesFactory.message}, {date: MessagesFactory.message});
+          MessagesFactory.message = null;
+        });
   }
 });
