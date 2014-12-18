@@ -14,7 +14,7 @@ body {
   background-color: red;
 }
 
-form.form-inline {
+form#messages-form.form-inline {
   padding-left: 1px;
   margin-left: 15px;
   padding-top: 13px;
@@ -24,6 +24,10 @@ form.form-inline {
 
 input#message-fweet {
   width: 648px;
+}
+
+input.form-control {
+  margin-bottom: 5px;
 }
 
 #add-message.btn {
@@ -36,4 +40,9 @@ div.user {
   padding-left: 32px;
   padding-bottom: 10px;
   height: 25px;
+}
+
+input.btn {
+  background-color: black;
+  color: white;
 }

@@ -1,0 +1,19 @@
+{
+  "name": "fritter",
+  "version": "0.0.0",
+  "homepage": "https://github.com/JeffStringer/fritter",
+  "authors": [
+    "jeffstringer <jeff.j.stringer@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-devise": "1.0.2"
+  }
+}

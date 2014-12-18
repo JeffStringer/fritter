@@ -10,8 +10,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new
-    @message.user_id = current_user.id
+    # @message.user_id = current_user.id
     @message.fweet = params[:message]
+    binding.pry
 
     if @message.save
       respond_to do |format|
