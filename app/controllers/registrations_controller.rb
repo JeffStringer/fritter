@@ -1,5 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
- 
+
+  def index
+    @users = User.all
+
+    respond_to do |format|
+      format.json { render :json => @users }
+    end
+  end
+
   private
  
   def sign_up_params

@@ -8,8 +8,11 @@
   <div class="col-md-12">
     <h2 ng-show="messages.length && filtered.length">Fweets</h2>
     <h2 ng-show="messages.length && !filtered.length">No Matches</h2>
-      <p ng-repeat="item in filtered = (messages | filter:query)">
-        <span>{{item.fweet}}, {{item.created_at}}</span>
-      </p>
+      <div class="fweet">
+        <p ng-repeat="item in filtered = (messages | filter:query)">
+          {{item.user.username}} @{{item.user.handle}} * {{item.date}}
+          {{item.fweet}}
+        </p>
+      </div>
   </div>
 </div>

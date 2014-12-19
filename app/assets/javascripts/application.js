@@ -16,7 +16,7 @@
 //= require angular-route
 //= require angular-rails-templates
 //= require angular-devise/lib/devise
-//= require moment
+//= require moment/min/moment.min
 //= require app
 //= require_tree ../templates
 //= require_tree .

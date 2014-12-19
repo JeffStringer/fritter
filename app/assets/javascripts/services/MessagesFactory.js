@@ -19,5 +19,7 @@ messageList.factory('MessagesFactory', function MessagesFactory($http) {
   factory.updateMessage = function(message) {
     $http.put(("/messages/" + message.id + ".json"), message);
   };
+
   return factory;
+
 });
