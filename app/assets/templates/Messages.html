@@ -2,17 +2,16 @@
   <form id="messages-form" ng-submit="addMessage()" class="form-inline" role="form">
     <button type="submit" class="btn btn-default">Submit</button>
     <div class="form-group">
-      <input type="text" ng-model="MessagesFactory.message" class="form-control" id="message-fweet" placeholder="What's happening?" >
+      <input type="text" ng-model="MessagesFactory.message" class="form-control" id="message-fweet" placeholder="What's happening?">
     </div>
   </form>
   <div class="col-md-12">
-    <h2 ng-show="messages.length && filtered.length">Fweets</h2>
-    <h2 ng-show="messages.length && !filtered.length">No Matches</h2>
+    <h2>Fweets</h2>
       <div class="fweet">
-        <p ng-repeat="item in filtered = (messages | filter:query)">
-          {{item.user.username}} @{{item.user.handle}} * {{item.date}}
-          {{item.fweet}}
-        </p>
+        <ul ng-repeat="item in filtered = (messages | filter:query)">
+          <p>{{item.user.username}} @{{item.user.handle}}</p>
+          <p id="fweet-end">{{item.fweet}}</p>
+        </ul>
       </div>
   </div>
 </div>

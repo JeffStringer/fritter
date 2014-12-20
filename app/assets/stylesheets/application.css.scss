@@ -6,24 +6,41 @@
   padding-top: 10px;
   width: 800px;
   margin: 0 auto;
-  height: 1000px;
   background-color: #f6f6f6;
 }
 
 body {
-  background-color: red;
+  background-color: #7F0000;
+}
+
+div#login {
+  padding-left: 0;
+}
+
+a.ng-binding {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+div.collapse.navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 form#messages-form.form-inline {
   padding-left: 1px;
   margin-left: 15px;
-  padding-top: 13px;
-  background-color: #00008B;
-  height: 60px;
+  padding-top: 8px;
+  background-color: #e6e6e6;
+  height: 50px;
 }
 
 input#message-fweet {
   width: 648px;
+}
+
+input#message-fweet.form-control.ng-pristine.ng-untouched.ng-valid {
+  color: #7F0000;  
 }
 
 input.form-control {
@@ -47,7 +64,22 @@ input.btn {
   color: white;
 }
 
-.fweet {
-  background-color: grey;
-  border: solid;
+div.fweet {
+  margin-right: 0;
+  width: 725px;
+}
+
+ul.ng-scope {
+  padding-left: 0;
+}
+
+p.ng-binding {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+p#fweet-end {
+  margin-right: 0;
+  border-bottom: solid #d3d3d3;
+  border-width:thin;  
 }
