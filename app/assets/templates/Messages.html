@@ -9,7 +9,7 @@
     <h2>Fweets</h2>
       <div class="fweet">
         <ul ng-repeat="item in filtered = (messages | filter:query)">
-          <p>{{item.user.username}} @{{item.user.handle}}</p>
+          <p>{{item.user.username}} @{{item.user.handle}} {{item.date}}</p>
           <p id="fweet-end">{{item.fweet}}</p>
         </ul>
       </div>
