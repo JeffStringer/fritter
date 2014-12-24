@@ -10,7 +10,7 @@
     <h2>Fweets</h2>
       <div class="fweet">
         <ul ng-repeat="item in filtered = (messages | filter:query)">
-          <p>{{item.user.username}} @{{item.user.handle}} {{item.now}}</p>
+          <p><span id="username">{{item.user.username}}</span><span id="remainder"> @{{item.user.handle}} * {{item.now}}</span></p>
           <p id="fweet-end">{{item.fweet}}</p>
         </ul>
       </div>
