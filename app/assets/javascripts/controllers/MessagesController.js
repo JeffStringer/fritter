@@ -1,8 +1,6 @@
-messageList.controller('MessageCtrl', function MessageController($scope, MessagesFactory, UsersFactory, Auth) {
+messageList.controller('MessageCtrl', function MessageController($scope, MessagesFactory, Auth) {
   $scope.MessagesFactory = MessagesFactory;
   $scope.messages = MessagesFactory.messages;
-
-  $scope.UsersFactory = UsersFactory;
 
   Auth.currentUser().then(function (user){
     $scope.user = user;
@@ -18,8 +16,9 @@ messageList.controller('MessageCtrl', function MessageController($scope, Message
   $scope.addMessage = function(user) {
     MessagesFactory.addMessage ()
       .success(function(data) {
-        now = moment().format();
-        $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, date: now});
+        var now = moment().format('LLL');
+        console.log(now);
+        $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, now: now});
           MessagesFactory.message = null;
         });
   }

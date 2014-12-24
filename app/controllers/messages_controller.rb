@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
     @message = Message.new
     @message.user_id = current_user.id
     @message.fweet = params[:message]
+    @message.now = @message.time_now
 
     if @message.save
       respond_to do |format|
@@ -63,6 +64,6 @@ class MessagesController < ApplicationController
 private
 
   def message_params
-    params.require(:message).permit(:user_id, :message, :id, :fweet)
+    params.require(:message).permit(:user_id, :message, :id, :fweet, :now)
   end
 end
