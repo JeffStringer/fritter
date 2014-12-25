@@ -4,7 +4,6 @@ describe 'the login process' do
     FactoryGirl.create(:user)
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
-    save_and_open_page    
     click_button 'Log In'
     expect(page).to have_content 'Logged in as User 1'
   end
