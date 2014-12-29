@@ -1,4 +1,4 @@
-angular.module('messageList').controller('NavCtrl', ['$scope','Auth', function($scope, Auth){
+angular.module('messageList').controller('NavCtrl', ['$scope', '$route', 'Auth', function($scope, $route, Auth){
   $scope.signedIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
 
@@ -16,5 +16,6 @@ angular.module('messageList').controller('NavCtrl', ['$scope','Auth', function($
 
   $scope.$on('devise:logout', function (e, user){
     $scope.user = {};
+    $route.reload();
   });
 }]);

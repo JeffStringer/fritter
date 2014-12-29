@@ -22,8 +22,10 @@ messageList.controller('MessageCtrl', function MessageController($scope, Message
           MessagesFactory.message = null;
       })
       .error(function(data) {
-        var error = "message " + data.errors.fweet.pop();
-        $scope.errors.push({error: error});
+        console.log($scope.user);
+        var error = data.errors.fweet.pop();
+        var errorMessage = "message " + error;
+        $scope.errors.push({error: errorMessage});
       }); 
     }  
 });

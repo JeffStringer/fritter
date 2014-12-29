@@ -2,11 +2,11 @@
     <form name="form" ng-submit="login()" novalidate>
       <div class="row" class="form-group">
         <div class="col-sm-6">
-        <div class="error" ng-show="form.$submitted || form.uEmail.$touched">
-          <span ng-show="form.uEmail.$error.required">Please enter your email.</span>
-          <span ng-show="form.uEmail.$error.email">Please enter a valid email.</span>
-        </div>
-          <input type="email" class="form-control" placeholder="Email" ng-model="user.email" name="uEmail" required="">
+          <div class="error" ng-show="form.$submitted || form.uEmail.$touched">
+            <span ng-show="form.uEmail.$error.required">Please enter your email.</span>
+            <span ng-show="form.uEmail.$error.email">Please enter a valid email.</span>
+          </div>
+            <input type="email" class="form-control" placeholder="Email" ng-model="user.email" name="uEmail" required="">
         </div>  
       </div>
       <div class="row" class="form-group">
