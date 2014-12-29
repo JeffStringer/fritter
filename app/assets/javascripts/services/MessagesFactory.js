@@ -1,6 +1,7 @@
 messageList.factory('MessagesFactory', function MessagesFactory($http) {
   var factory = {};
   factory.messages = [];
+  factory.errors = [];
 
   factory.getMessages = function() {
     return $http.get('/messages.json')

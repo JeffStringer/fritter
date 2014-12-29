@@ -13,6 +13,12 @@ body {
   background-color: #7F0000;
 }
 
+span.error {
+  color: red;
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+
 div#login {
   padding-left: 0;
 }
@@ -27,7 +33,7 @@ div.collapse.navbar-collapse {
   padding-right: 0;
 }
 
-form#messages-form.form-inline {
+form#messagesForm.form-inline {
   padding-left: 1px;
   margin-left: 15px;
   padding-top: 8px;
