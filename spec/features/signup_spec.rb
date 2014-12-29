@@ -23,4 +23,14 @@ describe 'the signup process' do
     click_button 'Register'
     expect(page).to have_content 'Please enter your email.'
   end
+
+  it 'provides error message if email is invalid', js: true do
+    fill_in 'Email', with: 'user@'
+    fill_in 'Username', with: 'User 1'
+    fill_in 'Handle', with: 'user1'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password Confirmation', with: 'password'
+    click_button 'Register'
+    expect(page).to have_content 'Please enter a valid email.'
+  end
 end
