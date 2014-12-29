@@ -1,8 +1,8 @@
  <div class="col-md-12">
-  <form name="form" ng-submit="register()">
+  <form name="form" ng-submit="register()" novalidate>
     <div class="row" class="form-group">
       <div class="col-sm-6">
-      <div class="error" ng-show="form.$submitted || form.uEmail.$touched">
+        <div class="error" ng-show="form.$submitted || form.uEmail.$touched">
           <span ng-show="form.uEmail.$error.required">Please enter your email.</span>
           <span ng-show="form.uEmail.$error.email">Please enter a valid email.</span>
         </div>
@@ -11,12 +11,18 @@
     </div>
     <div class="row" class="form-group">
       <div class="col-sm-6">
-        <input type="text" class="form-control" placeholder="Username" ng-model="user.username">
+        <div class="error" ng-show="form.$submitted || form.uEmail.$touched">
+          <span ng-show="form.uName.$error.required">Please enter your username.</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" ng-model="user.username" name="uName" required="">
       </div>  
     </div>
     <div class="row" class="form-group">
       <div class="col-sm-6">
-        <input type="text" class="form-control" placeholder="Handle" ng-model="user.handle">
+        <div class="error" ng-show="form.$submitted || form.uHandle.$touched">
+          <span ng-show="form.uHandle.$error.required">Please enter a handle.</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Handle" ng-model="user.handle" name="uHandle" required="" >
       </div>  
     </div>
     <div class="row" class="form-group">
