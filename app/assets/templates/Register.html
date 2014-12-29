@@ -28,6 +28,7 @@
     <div class="row" class="form-group">
       <div class="col-sm-6">
         <div class="error" ng-show="form.$submitted || form.uPassword.$touched">
+          <span ng-show="form.$submitted && user.password !== user.password_confirmation">Password and confirmation do not match.</span>
           <span ng-show="form.uPassword.$error.required">Please enter a password.</span>
         </div>
         <input type="password" class="form-control" placeholder="Password" ng-model="user.password" name="uPassword" required="">

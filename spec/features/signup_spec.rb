@@ -73,4 +73,14 @@ describe 'the signup process' do
     click_button 'Register'
     expect(page).to have_content 'Please enter password confirmation.'
   end
+
+  it 'provides error message if password and confirmation do not match', js: true do
+    fill_in 'Email', with: 'user@gmail.com'
+    fill_in 'Username', with: 'User 1'
+    fill_in 'Handle', with: 'user1'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password Confirmation', with: 'passwrd'
+    click_button 'Register'
+    expect(page).to have_content 'Password and confirmation do not match.'
+  end
 end
