@@ -14,9 +14,12 @@ body {
 }
 
 span.error {
-  color: red;
   margin-left: 15px;
   margin-bottom: 0;
+}
+
+.error {
+  color: red;
 }
 
 div#login {

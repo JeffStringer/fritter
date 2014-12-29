@@ -18,7 +18,6 @@ messageList.controller('MessageCtrl', function MessageController($scope, Message
     MessagesFactory.addMessage ()
       .success(function(data) {
         var now = moment().format('LLL');
-        console.log(now);
         $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, now: now});
           MessagesFactory.message = null;
       })
