@@ -53,4 +53,14 @@ describe 'the signup process' do
     click_button 'Register'
     expect(page).to have_content 'Please enter a handle.'
   end
+
+  it 'provides error message if Password is blank', js: true do
+    fill_in 'Email', with: 'user@gmail.com'
+    fill_in 'Username', with: 'User 1'
+    fill_in 'Handle', with: 'user1'
+    fill_in 'Password', with: ''
+    fill_in 'Password Confirmation', with: 'password'
+    click_button 'Register'
+    expect(page).to have_content 'Please enter a password.'
+  end
 end

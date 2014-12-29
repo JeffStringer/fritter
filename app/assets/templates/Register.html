@@ -27,7 +27,10 @@
     </div>
     <div class="row" class="form-group">
       <div class="col-sm-6">
-        <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+        <div class="error" ng-show="form.$submitted || form.uPassword.$touched">
+          <span ng-show="form.uPassword.$error.required">Please enter a password.</span>
+        </div>
+        <input type="password" class="form-control" placeholder="Password" ng-model="user.password" name="uPassword" required="">
       </div>  
     </div>
     <div class="row" class="form-group">
