@@ -15,6 +15,7 @@ gem 'bcrypt'
 gem 'rb-readline'
 gem 'devise'
 gem 'pry'
+gem 'figaro'
 
 group :development do
   gem 'better_errors'
