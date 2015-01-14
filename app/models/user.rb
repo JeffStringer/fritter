@@ -11,5 +11,6 @@ class User < ActiveRecord::Base
 
   def send_email
     UserMailer.user_email(self).deliver
+    UserMailer.user_subscription(self).deliver
   end
 end
