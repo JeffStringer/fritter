@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-  <html>
+<html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>New User</h1>
-      <p>Someone has signed up for Fritter!</p>
-      <p><%= @user.username %><br/> 
-      <%= @user.handle %><br/>
-      <%= @user.email %><br/>
-      </p>
-</body>
+    <h1>The new user's details:</h1>
+    <p>User Name: <%= @user.username %></p>
+    <p>Handle: <%= @user.handle %></p>
+    <p>Email: <%= @user.email %></p>
+  </body>
 </html>
