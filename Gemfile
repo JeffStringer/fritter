@@ -14,8 +14,8 @@ gem 'simple_form'
 gem 'bcrypt'
 gem 'rb-readline'
 gem 'devise'
-gem 'pry'
 gem 'figaro'
+gem 'gibbon'
 
 group :development do
   gem 'better_errors'
@@ -24,6 +24,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'pry'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
