@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  after_create :send_email
-  after_create :subscription
+  after_create :send_email, :subscription
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

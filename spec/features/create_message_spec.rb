@@ -3,7 +3,7 @@ describe 'new message' do
   before do
     visit '/#/login'
     FactoryGirl.create(:user)
-    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Email', with: 'user@gmail.com'
     fill_in 'Password', with: 'password'
     click_button 'Log In'
   end
