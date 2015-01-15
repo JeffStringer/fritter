@@ -14,14 +14,15 @@ class User < ActiveRecord::Base
 
     def send_email
       UserMailer.user_email(self).deliver
-      UserMailer.user_subscription(self).deliver
     end
 
     def subscription
       mailchimp = Gibbon::API.new
       result = mailchimp.lists.subscribe({
         :id => ENV['MAILCHIMP_LIST_ID'], 
-        :email => {:email => self.email}, 
+        :email => {:email => self.email},
+        :merge_vars => { "MMERGE1" => self.username,
+                          "MMERGE2" => self.handle },
         :double_optin => false, 
         :update_existing => true,
         :send_welcome => true
