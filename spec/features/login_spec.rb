@@ -44,6 +44,7 @@ describe 'the login process' do
     fill_in 'Email', with: 'user@gmail'
     fill_in 'Password', with: 'bubbles'
     click_button 'Log In'
-    expect(page).to have_content 'Login failed: incorrect email and/or password'
+    save_and_open_page
+    expect(page).to have_content 'Invalid email or password.'
   end
 end

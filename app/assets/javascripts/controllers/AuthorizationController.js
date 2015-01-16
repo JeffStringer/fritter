@@ -5,7 +5,7 @@ angular.module('messageList').controller('AuthCtrl', ['$scope','$location','Auth
     Auth.login($scope.user).then(function(){
       $location.path('/')
     }, function(error) {
-      var errorMessage = "Login failed: incorrect email and/or password";
+      var errorMessage = error.data.error;
       $scope.errors.push({error: errorMessage});
     });
   };
@@ -13,6 +13,10 @@ angular.module('messageList').controller('AuthCtrl', ['$scope','$location','Auth
   $scope.register = function() {
     Auth.register($scope.user).then(function(){
       $location.path('/')
+    }, function(error) {
+      console.log(error.data.errors["email"][0]);
+      var errorMessage = "Email " + error.data.errors["email"][0];
+      $scope.errors.push({error: errorMessage});
     });
   };
 }]);
