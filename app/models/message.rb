@@ -1,7 +1,6 @@
 class Message < ActiveRecord::Base
-  validates_presence_of :fweet
+  validates_presence_of :fweet, :now
   validates_length_of :fweet, :maximum => 140
-  validates_presence_of :now
   belongs_to :user
 
   def as_json(options = {})

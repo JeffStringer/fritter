@@ -39,4 +39,11 @@ describe 'the login process' do
     click_button 'Log In'
     expect(page).to have_content 'Please enter your password.'
   end
+
+  it 'displays error message if login fails', js: true do
+    fill_in 'Email', with: 'user@gmail'
+    fill_in 'Password', with: 'bubbles'
+    click_button 'Log In'
+    expect(page).to have_content 'Login failed: incorrect email and/or password'
+  end
 end
