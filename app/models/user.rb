@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :handle, :username
+  validates_uniqueness_of :handle, :username
   has_many :messages
 
   private

@@ -14,7 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def failure
     respond_to do |format|
-      format.json { render json: {errors: "Login failed"}, :status => 422 }
+      format.json { render json: {errors: ""}, :status => 401 }
     end
   end
 

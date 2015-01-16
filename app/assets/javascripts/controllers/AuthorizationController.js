@@ -14,9 +14,10 @@ angular.module('messageList').controller('AuthCtrl', ['$scope','$location','Auth
     Auth.register($scope.user).then(function(){
       $location.path('/')
     }, function(error) {
-      console.log(error.data.errors["email"][0]);
-      var errorMessage = "Email " + error.data.errors["email"][0];
-      $scope.errors.push({error: errorMessage});
+      var errorEmail = "Email " + error.data.errors["email"];
+      var errorUsername = "Username " + error.data.errors["username"];
+      var errorHandle = "Handle " + error.data.errors["handle"];
+      $scope.errors.push({error: errorEmail},{error: errorUsername},{error: errorHandle});
     });
   };
 }]);

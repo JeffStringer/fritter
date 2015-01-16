@@ -1,8 +1,7 @@
  <div class="col-md-12">
    <span ng-repeat="item in filtered = (errors | filter:query)">
-    <span class="error-registration" >
-    Your signup failed due to the following reasons:<br/>
-    {{item.error}}
+    <span class="error-registration">
+    {{item.error}}<br/>
     </span>
   </span>
   <form name="form" ng-submit="register()" novalidate>
