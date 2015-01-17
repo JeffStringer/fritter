@@ -1,12 +1,11 @@
 angular.module('messageList').controller('AuthCtrl', ['$scope','$location','Auth', function($scope, $location, Auth){
-  $scope.errors = [];
 
   $scope.login = function() {
     Auth.login($scope.user).then(function(){
       $location.path('/')
     }, function(error) {
-      var errorMessage = error.data.error;
-      $scope.errors.push({error: errorMessage});
+      $scope.errors = [];
+      $scope.errors.push({error: error.data.error});
     });
   };
 
@@ -14,17 +13,15 @@ angular.module('messageList').controller('AuthCtrl', ['$scope','$location','Auth
     Auth.register($scope.user).then(function(){
       $location.path('/')
     }, function(error) {
-      var errorEmail = error.data.errors["email"];
-      var errorUsername = error.data.errors["username"];
-      var errorHandle = error.data.errors["handle"];
-      if (errorEmail != undefined) {
-        $scope.errors.push({error: "Email " + errorEmail});
+      $scope.errors = [];
+      if (error.data.errors["email"] != undefined) {
+        $scope.errors.push({error: "Email " + error.data.errors["email"]});
       }
-      if (errorUsername != undefined) {
-        $scope.errors.push({error: "Username " + errorUsername});
+      if (error.data.errors["username"] != undefined) {
+        $scope.errors.push({error: "Username " + error.data.errors["username"]});
       }
-      if (errorHandle != undefined) {
-        $scope.errors.push({error: "Handle " + errorHandle});
+      if (error.data.errors["handle"] != undefined) {
+        $scope.errors.push({error: "Handle " + error.data.errors["handle"]});
       }
     });
   };
