@@ -8,16 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def auth_options
-    super.merge(recall: "#{controller_path}#failure")
-  end
-
-  def failure
-    respond_to do |format|
-      format.json { render json: {errors: ""}, :status => 401 }
-    end
-  end
-
   private
  
   def sign_up_params

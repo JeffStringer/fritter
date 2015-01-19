@@ -4,8 +4,8 @@ messageList.config(function ($routeProvider) {
   $routeProvider
     .when('/',
       {
-        controller: 'MessageCtrl',
-        templateUrl: 'Messages.html'
+        controller: 'MainCtrl',
+        templateUrl: 'Main.html'
       })
 
     .when('/login',

@@ -8,11 +8,10 @@
   </head>
   <body>
     <div class="container">
-      <%= flash[:notice] %> 
       <div class="user">
         <div ng-include="'Navigation.html'"></div>
       </div>
       <%= yield %>
-    </div>  
+    </div> 
   </body>
 </html>
