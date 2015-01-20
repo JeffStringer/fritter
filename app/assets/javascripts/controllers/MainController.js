@@ -1,7 +1,11 @@
-messageList.controller('MainCtrl', function MainController($scope, FollowsFactory, MessagesFactory, UsersFactory, Auth) {
+messageList.controller('MainCtrl', function MainController(Auth, $scope, FollowsFactory, MessagesFactory, UsersFactory) {
+  $scope.FollowsFactory = FollowsFactory;
+  $scope.follows = FollowsFactory.follows;
+
   $scope.MessagesFactory = MessagesFactory;
   $scope.messages = MessagesFactory.messages;
   $scope.errors = MessagesFactory.errors;
+
   $scope.UsersFactory = UsersFactory;
   $scope.users = UsersFactory.users;
 
@@ -16,8 +20,19 @@ messageList.controller('MainCtrl', function MainController($scope, FollowsFactor
     });
   })();
 
-  $scope.addFollows = function(user) {
+  // $scope.getFollows = (function(user) {
+  //   FollowsFactory.getFollows(user)
+  //     .success(function(data) {
+  //       $scope.follows = data;
+  //   });
+  // })();
+
+  $scope.addFollows = function(user){
     FollowsFactory.addFollows(user)
+  }
+
+  $scope.deleteFollows = function(user, follow){
+    FollowsFactory.deleteFollows(user)
   }
 
   $scope.getMessages = (function() {
@@ -27,7 +42,7 @@ messageList.controller('MainCtrl', function MainController($scope, FollowsFactor
     });
   })();
 
-  $scope.addMessage = function(user) {
+  $scope.addMessage = function(user){
     MessagesFactory.addMessage ()
       .success(function(data) {
         // var now = moment().format('LLL');

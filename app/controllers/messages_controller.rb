@@ -1,7 +1,12 @@
 class MessagesController < ApplicationController
   
   def index
-    @messages = Message.all
+    @messages = []
+    unless current_user == nil
+      @messages << current_user.messages 
+      current_user.following.each { |f| @messages << f.user.messages } 
+    end
+    @messages.flatten!
 
     respond_to do |format|
       format.json { render :json => @messages }

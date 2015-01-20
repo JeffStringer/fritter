@@ -20,6 +20,7 @@
 
 <div class="col-md-12">
   <div class="users">
+    {{ user.follows }}
     <ul ng-repeat="item in filtered = (users | filter:query)">
       <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
       <form ng-submit="addFollows(item)" role="form">
