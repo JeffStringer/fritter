@@ -20,12 +20,13 @@
 
 <div class="col-md-12">
   <div class="users">
-    {{ user.follows }}
-    <ul ng-repeat="item in filtered = (users | filter:query)">
-      <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
-      <form ng-submit="addFollows(item)" role="form">
-        <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
-      </form>  
+    <ul ng-repeat="item in filtered = (unfollowed_users | filter:query)">
+      <div ng-hide="item.username === user.username">
+        <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
+        <form ng-submit="addFollows(item)" role="form">
+          <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
+        </form>
+      </div>    
     </ul>
   </div>
 </div>

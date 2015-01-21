@@ -3,7 +3,7 @@ messageList.factory('FollowsFactory', function FollowsFactory($http, UsersFactor
   factory.follows = [];
 
   factory.getFollows = function(user) {
-    return $http.get("/users/" + user.id + "/follows.json")
+    return $http.get("/users/" + 0 + "/follows.json")
   };
 
   factory.addFollows = function(user) {
