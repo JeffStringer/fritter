@@ -1,6 +1,6 @@
-var messageList = angular.module('messageList', ['ngRoute', 'templates', 'Devise',]);
+var Fritter = angular.module('Fritter', ['ngRoute', 'templates', 'Devise']);
 
-messageList.config(function ($routeProvider) {
+Fritter.config(function ($routeProvider) {
   $routeProvider
     .when('/',
       {

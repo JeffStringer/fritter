@@ -1,4 +1,4 @@
-angular.module('messageList').controller('AuthCtrl', ['$scope','$location','Auth', function($scope, $location, Auth){
+angular.module('Fritter').controller('AuthCtrl', ['$scope','$location','Auth', function($scope, $location, Auth){
 
   $scope.login = function() {
     Auth.login($scope.user).then(function(){

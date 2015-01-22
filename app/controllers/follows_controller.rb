@@ -1,14 +1,31 @@
 class FollowsController < ApplicationController
 
   def index
+    @users = User.all
     unless current_user === nil
-      @following = current_user.following
+      @following = []
+      @followers = []
+      current_user.following.each { |f| @following << f.user }
+      current_user.followers.each { |f| @followers << f.user }
     else
       @following = []
+      @followers = []
     end  
 
     respond_to do |format|
-      format.json { render :json => @following }
+      format.json { render :json => { following: @following, followers: @followers, users: @users, user: current_user } }
+    end
+  end
+
+  def show
+    unless current_user === nil
+      @followers = current_user.followers
+    else
+      @followers = []
+    end  
+
+    respond_to do |format|
+      format.json { render :json => @followers }
     end
   end
 

@@ -1,4 +1,4 @@
-messageList.controller('MainCtrl', function MainController(Auth, $scope, FollowsFactory, MessagesFactory, UsersFactory) {
+Fritter.controller('MainCtrl', function MainController(Auth, $scope, FollowsFactory, MessagesFactory, UsersFactory) {
   $scope.FollowsFactory = FollowsFactory;
   $scope.follows = FollowsFactory.follows;
 
@@ -23,28 +23,30 @@ messageList.controller('MainCtrl', function MainController(Auth, $scope, Follows
   $scope.getFollows = (function(user, users) {
     FollowsFactory.getFollows(user, users)
       .success(function(data) {
-        $scope.follows = data;
-        $scope.followed_users = [];
-        $scope.unfollowed_users = [];
-        if ($scope.follows.length === 0) {
-          $scope.unfollowed_users = $scope.users;
-        } else { 
-          $scope.follows.forEach(function(follow) {
+        $scope.user = data.user;
+        $scope.followings = data.following;
+        $scope.followers = data.followers;
+        $scope.users = data.users
+        $scope.notFollowings = [];
+        if ($scope.followings.length === 0 ) {
           $scope.users.forEach(function(u) {
-              if (follow.user_id === u.id) {
-                $scope.followed_users.push(u);
-              }
-            });
+            if ((u.id != $scope.user.id)) {
+              $scope.notFollowings.push(u);
+            }
           });
-          $scope.followed_users.forEach(function(follow) {
-            $scope.users.forEach(function(u) {
-              if (follow.id != u.id) {
-                $scope.unfollowed_users.push(u);
-              }
-            });
+        } else {
+          var followingsIds = {}
+          $scope.followings.forEach(function(obj){
+              followingsIds[obj.id] = obj;
           });
+          $scope.notFollowings =  $scope.users.filter(function(obj){
+                                      return !(obj.id in followingsIds);
+                                  });
+          $scope.notFollowings =  $scope.notFollowings.filter( function(f) {
+                                    return !(f.id === $scope.user.id);
+                                  });
         }
-    });
+      });
   })();
 
   $scope.addFollows = function(user){
@@ -58,7 +60,8 @@ messageList.controller('MainCtrl', function MainController(Auth, $scope, Follows
   $scope.getMessages = (function() {
     MessagesFactory.getMessages()
       .success(function(data) {
-        $scope.messages = data;
+        $scope.messages = data.messages;
+        $scope.myMessages = data.myMessages;
     });
   })();
 

@@ -18,15 +18,16 @@
     </div>
   </div>
 
-<div class="col-md-12">
+<div class="col-md-12" ng-hide="!user">
+  <div ng-show="followings">Following: {{followings.length}}</div>
+  <div ng-show="followers">Followers: {{followers.length}}</div>
+  <div ng-show="myMessages">Freets: {{myMessages.length}}</div>
   <div class="users">
-    <ul ng-repeat="item in filtered = (unfollowed_users | filter:query)">
-      <div ng-hide="item.username === user.username">
-        <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
-        <form ng-submit="addFollows(item)" role="form">
-          <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
-        </form>
-      </div>    
+    <ul ng-repeat="item in filtered = (notFollowings | filter:query)">
+      <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
+      <form ng-submit="addFollows(item)" role="form">
+        <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
+      </form>
     </ul>
   </div>
 </div>

@@ -1,4 +1,4 @@
-angular.module('messageList').controller('NavCtrl', ['$scope', '$route', 'Auth', function($scope, $route, Auth){
+angular.module('Fritter').controller('NavCtrl', ['$scope', '$route', 'Auth', function($scope, $route, Auth){
   $scope.signedIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
 

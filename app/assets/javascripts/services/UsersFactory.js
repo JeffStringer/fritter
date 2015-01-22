@@ -1,4 +1,4 @@
-messageList.factory('UsersFactory', function UsersFactory($http) {
+Fritter.factory('UsersFactory', function UsersFactory($http) {
   var factory = {};
   factory.users = [];
 

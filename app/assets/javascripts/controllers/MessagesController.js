@@ -1,4 +1,4 @@
-messageList.controller('MessageCtrl', function MessageController($scope, MessagesFactory, Auth) {
+Fritter.controller('MessageCtrl', function MessageController($scope, MessagesFactory, Auth) {
   $scope.MessagesFactory = MessagesFactory;
   $scope.messages = MessagesFactory.messages;
   $scope.errors = MessagesFactory.errors;

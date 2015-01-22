@@ -1,11 +1,9 @@
 describe 'follow process' do
   
   before do
-    FactoryGirl.create(:user)
-    FactoryGirl.create(:user2)
-  end
-
-  it "displays followed user's messages", js: true do
+    @user = FactoryGirl.create(:user)
+    @user2 = FactoryGirl.create(:user2)
+    @user.followers.create(follower_id: @user2.id)
     visit '/#/login'
     fill_in 'Email', with: 'user@gmail.com'
     fill_in 'Password', with: 'password'
@@ -17,8 +15,21 @@ describe 'follow process' do
     fill_in 'Email', with: 'user2@gmail.com'
     fill_in 'Password', with: 'password'
     click_button 'Log In'
-    click_button 'Follow'
-    save_and_open_page
+  end
+
+  it "displays followed user's messages", js: true do
     expect(page).to have_content 'Hear ye hear ye!'
+  end
+
+  it "displays the total number of users the user is following", js: true do
+    expect(page).to have_content 'Following: 1'
+  end
+
+  it "displays the total number of followers the user has", js: true do
+    expect(page).to have_content 'Followers: 0'
+  end
+
+  it "should not give the option of following as no other users available", js: true do
+    expect(page).to_not have_button 'Follow'
   end
 end
