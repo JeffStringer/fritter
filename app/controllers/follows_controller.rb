@@ -17,18 +17,6 @@ class FollowsController < ApplicationController
     end
   end
 
-  def show
-    unless current_user === nil
-      @followers = current_user.followers
-    else
-      @followers = []
-    end  
-
-    respond_to do |format|
-      format.json { render :json => @followers }
-    end
-  end
-
   def create
     @user = User.find(params["user_id"])
     @following = @user.followers.new(follower_id: current_user.id)
