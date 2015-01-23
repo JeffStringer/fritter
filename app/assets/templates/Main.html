@@ -1,27 +1,31 @@
-  <div class="col-md-12">
-    <span ng-repeat="item in filtered = (errors | filter:query)">
-      <span class="error" >{{item.error}}</span>
-    </span>
-    <form ng-if="user" id="messagesForm" ng-submit="addMessage()" class="form-inline" role="form" novalidate>
-      <button type="submit" class="btn btn-default">Submit</button>
-      <div class="form-group">
-        <input type="text" name="message" ng-model="MessagesFactory.message" class="form-control" id="message-fweet" placeholder="What's happening?">
-      </div>
-    </form>
-    <div class="col-md-12">
-      <div class="fweet">
-        <ul ng-repeat="item in filtered = (messages | filter:query | orderBy: '-created_at')">
-          <p><span id="username">{{item.user.username}}</span><span id="remainder"> @{{item.user.handle}} * {{item.created_at}}</span></p>
-          <p id="fweet-end">{{item.fweet}}</p>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-<div class="col-md-12" ng-hide="!user">
+<div class="user-box">
+  <span>Logged in as {{user.username}}</span><br/>
+  <span>@{{user.handle}}</span>
   <div ng-show="followings">Following: {{followings.length}}</div>
   <div ng-show="followers">Followers: {{followers.length}}</div>
   <div ng-show="myMessages">Freets: {{myMessages.length}}</div>
+</div>
+
+<div class="col-md-12">
+  <span ng-repeat="item in filtered = (errors | filter:query)">
+    <span class="error" >{{item.error}}</span>
+  </span>
+  <form ng-if="user" id="messagesForm" ng-submit="addMessage()" class="form-inline" role="form" novalidate>
+    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+      <input type="text" name="message" ng-model="MessagesFactory.message" class="form-control" id="message-fweet" placeholder="What's happening?">
+    </div>
+  </form>
+  <div class="col-md-12">
+    <div class="fweet">
+      <ul ng-repeat="item in filtered = (messages | filter:query | orderBy: '-created_at')">
+        <p><span id="username">{{item.user.username}}</span><span id="remainder"> @{{item.user.handle}} * {{item.created_at}}</span></p>
+        <p id="fweet-end">{{item.fweet}}</p>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="col-md-12" ng-hide="!user">
   <div class="users">
     <ul ng-repeat="item in filtered = (notFollowings | filter:query)">
       <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
