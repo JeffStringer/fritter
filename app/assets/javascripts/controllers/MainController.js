@@ -62,14 +62,17 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, FollowsFact
       .success(function(data) {
         $scope.messages = data.messages;
         $scope.myMessages = data.myMessages;
+        now = moment().format();
+        $scope.messages.forEach(function(m) {
+          m.created_at = moment(m.created_at).format("MMM D");
+        });
     });
   })();
 
   $scope.addMessage = function(user){
     MessagesFactory.addMessage ()
       .success(function(data) {
-        // var now = moment().format('LLL');
-        $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, created_at: data.created_at});
+        $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, created_at: moment(data.created_at).startOf('minute').fromNow()});
           MessagesFactory.message = null;
       })
       .error(function(data) {
