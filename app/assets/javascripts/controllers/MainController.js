@@ -62,9 +62,15 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, FollowsFact
       .success(function(data) {
         $scope.messages = data.messages;
         $scope.myMessages = data.myMessages;
-        now = moment().format();
+        now = new Date();
+
         $scope.messages.forEach(function(m) {
-          m.created_at = moment(m.created_at).format("MMM D");
+          m.created_at = moment(m.created_at).toDate();
+          if (moment(now).format('ll') === moment(m.created_at).format('ll')) {
+              m.created_at = moment(m.created_at).format('h:mm A');
+          } else {
+              m.created_at = moment(m.created_at).format("MMM D");
+          }
         });
     });
   })();
