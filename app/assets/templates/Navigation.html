@@ -2,6 +2,7 @@
     <div class="collapse navbar-collapse pull-left" ng-controller="NavCtrl">
       <ul class="nav navbar-nav">
         <li><a href="#/">Fritter</a></li>
+        <li ng-hide="signedIn()"><a href="#/about">About</a></li>
       </ul>
     </div>
     <div class="collapse navbar-collapse pull-right" ng-controller="NavCtrl">

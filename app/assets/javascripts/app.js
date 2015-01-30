@@ -8,6 +8,12 @@ Fritter.config(function ($routeProvider) {
         templateUrl: 'Main.html'
       })
 
+    .when('/about',
+      {
+        controller: 'AboutCtrl',
+        templateUrl: 'About.html'
+      })
+
     .when('/login',
       {
         controller: 'AuthCtrl',
