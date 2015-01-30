@@ -13,7 +13,7 @@ describe 'navigation links rerouting' do
 
   it 'reroutes user to main path upon clicking home link', js: true do
     visit '/#/login'
-    click_link 'Home'
+    click_link 'Fritter'
     expect(current_path).to eq '/'
   end
 end

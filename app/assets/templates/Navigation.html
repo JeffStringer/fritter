@@ -1,12 +1,12 @@
   <nav class="navbar navbar-inverse fixed navbar-custom" role="navigation">
     <div class="collapse navbar-collapse pull-left" ng-controller="NavCtrl">
       <ul class="nav navbar-nav">
-        <li id="logged-in" ng-show="signedIn()"><a href="#/">Logged in as {{user.username}}</a><li>
+        <li><a href="#/">Fritter</a></li>
+        
       </ul>
     </div>
     <div class="collapse navbar-collapse pull-right" ng-controller="NavCtrl">
       <ul class="nav navbar-nav title">
-          <li><a href="#/">Home</a></li>
           <li ng-hide="signedIn()"><a href="#/login">Log In</a></li>
           <li ng-hide="signedIn()"><a href="#/signup">Sign Up</a></li>
           <li ng-show="signedIn()"><a href="" ng-click="logout()">Log Out</a></li>
