@@ -1,4 +1,4 @@
-Fritter.controller('MainCtrl', function MainController(Auth, $scope, FollowsFactory, MessagesFactory, UsersFactory) {
+Fritter.controller('MainCtrl', function MainController(Auth, $scope, $route, FollowsFactory, MessagesFactory, UsersFactory) {
   $scope.FollowsFactory = FollowsFactory;
   $scope.follows = FollowsFactory.follows;
 
@@ -51,6 +51,7 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, FollowsFact
 
   $scope.addFollows = function(user){
     FollowsFactory.addFollows(user)
+    $route.reload();
   }
 
   $scope.deleteFollows = function(user, follow){
