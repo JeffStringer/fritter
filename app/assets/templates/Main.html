@@ -1,4 +1,4 @@
-<div class="user-box">
+<div ng-hide="!user" class="user-box">
   <span>Logged in as {{user.username}}</span><br/>
   <span>@{{user.handle}}</span>
   <div ng-show="followings">Following: {{followings.length}}</div>
@@ -6,7 +6,12 @@
   <div ng-show="myMessages">Freets: {{myMessages.length}}</div>
 </div>
 
-<div class="col-md-12">
+<div ng-show="!user" class="col-md-12">
+  <h2>Welcome to Fritter! The world is your oyster.</h2>
+  <h4>Please login or signup!</h4>
+</div>
+
+<div ng-hide="!user" class="col-md-12">
   <span ng-repeat="item in filtered = (errors | filter:query)">
     <span class="error" >{{item.error}}</span>
   </span>
@@ -25,7 +30,8 @@
     </div>
   </div>
 </div>
-<div class="users-box">
+
+<div ng-hide="!user || ((followings.length + 1) === users.length)" class="users-box">
   <ul ng-repeat="item in filtered = (notFollowings | filter:query)">
     <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
     <form ng-submit="addFollows(item)" role="form">
