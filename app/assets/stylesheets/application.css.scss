@@ -2,8 +2,15 @@
 
 /* universal */
 
+nav.navbar.nav-bar.inverse.fixed.navbar-custom {
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+}
+
 div.container {
-  margin-top: 100px;
+  margin-top: 80px;
   width: 800px;
   margin: 0 auto;
   background-color: #f6f6f6;
@@ -110,11 +117,11 @@ span#remainder {
 .user-box {
   position: fixed;
   padding-left: 10px;
-  margin-top: 100px;
+  margin-top: 71px;
   margin-left: 10px;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 150px;
   height: 180px;
   background-color: white;
 }

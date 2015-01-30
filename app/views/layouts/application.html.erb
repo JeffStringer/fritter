@@ -7,10 +7,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div>
+      <div ng-include="'Navigation.html'"></div>
+    </div>
     <div class="container">
-      <div class="user">
-        <div ng-include="'Navigation.html'"></div>
-      </div>
       <%= yield %>
     </div> 
   </body>
