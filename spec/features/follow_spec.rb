@@ -32,4 +32,21 @@ describe 'follow process' do
   it "should not give the option of following as no other users available", js: true do
     expect(page).to_not have_button 'Follow'
   end
+
+  it 'should show users who are following current user', js: true do
+    click_link 'Followers:'
+    expect(page).to have_content 'User 2, you have no current followers.'
+  end
+
+  it 'should show who current user is following', js: true do
+    click_link 'Following:'
+    expect(page).to have_content 'User 2, you are following: User 1'
+  end
+
+  it 'should allow user to unfollow a followed user', js: true do
+    click_link 'Following:'
+    click_button 'Unfollow'
+    save_and_open_page
+    expect(page).to_not have_button 'Unfollow'
+  end
 end

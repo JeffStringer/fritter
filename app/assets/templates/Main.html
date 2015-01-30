@@ -1,8 +1,8 @@
 <div ng-hide="!user" class="user-box">
   <span>Logged in as {{user.username}}</span><br/>
   <span>@{{user.handle}}</span>
-  <div ng-show="followings">Following: {{followings.length}}</div>
-  <div ng-show="followers">Followers: {{followers.length}}</div>
+  <div ng-show="followings"><a href="#/following">Following:</a> {{followings.length}}</div>
+  <div ng-show="followers"><a href="#/followers">Followers:</a> {{followers.length}}</div>
   <div ng-show="myMessages">Freets: {{myMessages.length}}</div>
 </div>
 

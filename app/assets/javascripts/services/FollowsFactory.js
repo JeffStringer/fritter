@@ -10,10 +10,10 @@ Fritter.factory('FollowsFactory', function FollowsFactory($http, UsersFactory) {
     return $http.post("/users/" + user.id + "/follows.json")
   };
 
-  factory.deleteFollows = function(user, follow) {
-    var index = factory.follows.indexOf(user)
+  factory.deleteFollows = function(currentUser, follow) {
+    var index = factory.follows.indexOf(follow)
     factory.follows.splice(index, 1);
-    $http.delete("/users/" + user.id + "/follows/" + follow.id + ".json")
+    $http.delete("/users/" + currentUser.id + "/follows/" + follow.id + ".json")
   };
 
   return factory;

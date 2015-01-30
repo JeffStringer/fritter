@@ -6,7 +6,10 @@ class FollowsController < ApplicationController
       @following = []
       @followers = []
       current_user.following.each { |f| @following << f.user }
-      current_user.followers.each { |f| @followers << f.user }
+      current_user.followers.each do |f| 
+        follower = User.find(f.follower_id)
+        @followers << follower
+      end
     else
       @following = []
       @followers = []
@@ -31,4 +34,15 @@ class FollowsController < ApplicationController
     end
   end
 
+  def destroy
+    @following = current_user.following.find_by(user_id: params[:id].to_i)
+    @following.destroy
+
+    respond_to do |format|
+      format.html do
+        redirect_to root_path
+      end
+      format.json { head :no_content }
+    end
+  end
 end

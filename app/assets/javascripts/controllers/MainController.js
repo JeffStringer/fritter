@@ -20,15 +20,15 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, $route, Fol
     });
   })();
 
-  $scope.getFollows = (function(user, users) {
-    FollowsFactory.getFollows(user, users)
+  $scope.getFollows = (function(user) {
+    FollowsFactory.getFollows(user)
       .success(function(data) {
         $scope.user = data.user;
         $scope.followings = data.following;
         $scope.followers = data.followers;
         $scope.users = data.users
         $scope.notFollowings = [];
-        if ($scope.followings.length === 0 ) {
+        if ( $scope.followings.length === 0 ) {
           $scope.users.forEach(function(u) {
             if ((u.id != $scope.user.id)) {
               $scope.notFollowings.push(u);
@@ -54,8 +54,10 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, $route, Fol
     $route.reload();
   }
 
-  $scope.deleteFollows = function(user, follow){
-    FollowsFactory.deleteFollows(user)
+  $scope.deleteFollows = function(user){
+    currentUser = $scope.user;
+    FollowsFactory.deleteFollows(currentUser, user)
+    $route.reload();
   }
 
   $scope.getMessages = (function() {

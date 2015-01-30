@@ -10,8 +10,20 @@ Fritter.config(function ($routeProvider) {
 
     .when('/about',
       {
-        controller: 'AboutCtrl',
+        controller: 'MainCtrl',
         templateUrl: 'About.html'
+      })
+
+    .when('/following',
+      {
+        controller: 'MainCtrl',
+        templateUrl: 'Following.html'
+      })
+
+    .when('/followers',
+      {
+        controller: 'MainCtrl',
+        templateUrl: 'Followers.html'
       })
 
     .when('/login',
