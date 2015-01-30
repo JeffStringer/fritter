@@ -25,13 +25,11 @@
     </div>
   </div>
 </div>
-<div class="col-md-12" ng-hide="!user">
-  <div class="users">
-    <ul ng-repeat="item in filtered = (notFollowings | filter:query)">
-      <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
-      <form ng-submit="addFollows(item)" role="form">
-        <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
-      </form>
-    </ul>
-  </div>
+<div class="users-box">
+  <ul ng-repeat="item in filtered = (notFollowings | filter:query)">
+    <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
+    <form ng-submit="addFollows(item)" role="form">
+      <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
+    </form>
+  </ul>
 </div>

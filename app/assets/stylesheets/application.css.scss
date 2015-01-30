@@ -6,7 +6,6 @@ nav.navbar.nav-bar.inverse.fixed.navbar-custom {
   width: 100%;
   margin-bottom: 0;
   padding-bottom: 0;
-
 }
 
 div.container {
@@ -117,10 +116,25 @@ span#remainder {
 .user-box {
   position: fixed;
   padding-left: 10px;
+  padding-top: 20px;
   margin-top: 71px;
   margin-left: 10px;
   top: 0;
   left: 0;
+  width: 150px;
+  height: 180px;
+  background-color: white;
+}
+
+.users-box {
+  position: fixed;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 20px;
+  margin-top: 71px;
+  margin-right: 10px;
+  top: 0;
+  right: 0;
   width: 150px;
   height: 180px;
   background-color: white;
