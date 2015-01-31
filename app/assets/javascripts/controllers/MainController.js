@@ -68,11 +68,11 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, $route, Fol
         now = new Date();
 
         $scope.messages.forEach(function(m) {
-          m.created_at = moment(m.created_at).toDate();
-          if (moment(now).format('ll') === moment(m.created_at).format('ll')) {
-              m.created_at = moment(m.created_at).format('h:mm A');
+          m.now = moment(m.created_at).toDate();
+          if (moment(now).format('ll') === moment(m.now).format('ll')) {
+              m.now = moment(m.now).format('h:mm A');
           } else {
-              m.created_at = moment(m.created_at).format("MMM D");
+              m.now = moment(m.now).format("MMM D");
           }
         });
     });
@@ -81,7 +81,7 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, $route, Fol
   $scope.addMessage = function(user){
     MessagesFactory.addMessage ()
       .success(function(data) {
-        $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, created_at: moment(data.created_at).startOf('minute').fromNow()});
+        $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, now: moment(data.created_at).startOf('minute').fromNow()});
           MessagesFactory.message = null;
       })
       .error(function(data) {
