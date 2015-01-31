@@ -13,4 +13,21 @@ RSpec.describe UserMailer, :type => :mailer do
       expect(mail.body.encoded).to match(user.email)
     end
   end
+
+  describe "user receives email if tagged in message" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:user2) { FactoryGirl.create(:user2) }
+    let(:message2) { FactoryGirl.create(:message2) }
+    let(:mail) { UserMailer.tagged_email(user2, user, message2) }
+
+    it "renders the headers" do
+      expect(mail.subject).to eq("You were mentioned in a post!")
+      expect(mail.to).to eq(["user@gmail.com"])
+      expect(mail.from).to eq(["jeff.j.stringer@gmail.com"])
+    end
+
+    it "renders the body" do
+      expect(mail.body.encoded).to match(user2.handle)
+    end
+  end
 end

@@ -1,11 +1,22 @@
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400, );
 
 /* universal */
 
-nav.navbar.nav-bar.inverse.fixed.navbar-custom {
-  width: 100%;
-  margin-bottom: 0;
-  padding-bottom: 0;
+nav#outside {
+  background-color: black;
+  height: 40px;
+}
+
+a.inside {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+}
+
+div.nav.container {
+  padding: 0;
+  background-color: black;
+  height: 40px;
 }
 
 div.container {
@@ -14,6 +25,7 @@ div.container {
   width: 800px;
   margin: 0 auto;
   background-color: #f6f6f6;
+  border-radius: 5px;
 }
 
 body {
@@ -125,6 +137,7 @@ span#remainder {
   width: 150px;
   height: 180px;
   background-color: white;
+  border-radius: 5px;
 }
 
 .users-box {
@@ -139,4 +152,5 @@ span#remainder {
   width: 150px;
   height: 180px;
   background-color: white;
+  border-radius: 5px;
 }

@@ -46,7 +46,6 @@ describe 'follow process' do
   it 'should allow user to unfollow a followed user', js: true do
     click_link 'Following:'
     click_button 'Unfollow'
-    save_and_open_page
     expect(page).to_not have_button 'Unfollow'
   end
 end

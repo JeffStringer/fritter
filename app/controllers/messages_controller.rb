@@ -15,10 +15,19 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new
-    @message.user_id = current_user.id
-    @message.fweet = params[:message]
-    @message.now = @message.time_now
+       
+      @message = Message.new
+      @message.user_id = current_user.id
+      @message.now = @message.time_now
+      @message.fweet = params[:message]
+      unless @message.fweet == {}
+        handle = @message.fweet.scan(/@\w+/).pop
+        unless handle.nil?
+          handle.slice!(0)
+          tagged = User.find_by(handle: handle)
+          UserMailer.tagged_email(current_user, tagged, @message.fweet).deliver
+        end
+      end
 
     if @message.save
       respond_to do |format|

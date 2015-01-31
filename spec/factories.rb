@@ -20,6 +20,7 @@ FactoryGirl.define do
   end
 
   factory :message2, class: Message do
-    fweet "Ruby is awesome!"
+    fweet "Ruby is awesome! @user1"
+    now "yes!"
   end
 end

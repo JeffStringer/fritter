@@ -1,16 +1,18 @@
-  <nav class="navbar navbar-inverse fixed navbar-custom" role="navigation">
-    <div class="collapse navbar-collapse pull-left" ng-controller="NavCtrl">
-      <ul class="nav navbar-nav">
-        <li><a href="#/">Fritter</a></li>
-        <li ng-hide="signedIn()"><a href="#/about">About</a></li>
-      </ul>
-    </div>
-    <div class="collapse navbar-collapse pull-right" ng-controller="NavCtrl">
-      <ul class="nav navbar-nav title">
-          <li ng-hide="signedIn()"><a href="#/login">Log In</a></li>
-          <li ng-hide="signedIn()"><a href="#/signup">Sign Up</a></li>
-          <li ng-show="signedIn()"><a href="" ng-click="logout()">Log Out</a></li>
-      </ul>    
-    </div>
+  <nav id="outside" class="navbar navbar-inverse fixed navbar-custom" role="navigation">
+    <div class="nav container">
+      <div class="collapse navbar-collapse pull-left" ng-controller="NavCtrl">
+        <ul class="nav navbar-nav">
+          <li><a id="title" class="inside" href="#/">Fritter</a></li>
+          <li ng-hide="signedIn()"><a class="inside" href="#/about">About</a></li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse pull-right" ng-controller="NavCtrl">
+        <ul class="nav navbar-nav title">
+            <li ng-hide="signedIn()"><a class="inside" href="#/login">Log In</a></li>
+            <li ng-hide="signedIn()"><a class="inside" href="#/signup">Sign Up</a></li>
+            <li ng-show="signedIn()"><a class="inside" href="" ng-click="logout()">Log Out</a></li>
+        </ul>    
+      </div>
+    </div>  
   </nav>
 

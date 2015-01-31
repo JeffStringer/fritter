@@ -20,6 +20,6 @@ describe 'navigation links rerouting' do
   it 'reroutes user to the about path upon clicking about link', js: true do
     visit '/#/login'
     click_link 'About'
-    expect(page).to have_content 'What to Expect'
+    expect(page).to have_content 'What is Fritter?'
   end
 end
