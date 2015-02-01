@@ -2,7 +2,7 @@
 
 ##About
 
-Fritter mimics the basic functionality of Twitter. Upon signing up, users receive a confirmation email. Similar to Twitter, users can post "freets" or messages, follower / unfollow other users and see their freets. When a user mentions another user in a freet, the tagged user receives an email with the freet.
+Fritter mimics the basic functionality of Twitter. Upon signing up, users receive a confirmation email. Similar to Twitter, users can post "freets" or messages, follower / unfollow other users and see their freets. Users receive email when they are being followed and when another user mentions them in a freet.
 
 ##So, what's under the hood?
 

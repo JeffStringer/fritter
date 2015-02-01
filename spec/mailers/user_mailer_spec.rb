@@ -30,4 +30,20 @@ RSpec.describe UserMailer, :type => :mailer do
       expect(mail.body.encoded).to match(user2.handle)
     end
   end
+
+  describe "user receives email when followed" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:user2) { FactoryGirl.create(:user2) }
+    let(:mail) { UserMailer.followed_email(user2, user) }
+
+    it "renders the headers" do
+      expect(mail.subject).to eq("Fritter: You are being followed!")
+      expect(mail.to).to eq(["user@gmail.com"])
+      expect(mail.from).to eq(["jeff.j.stringer@gmail.com"])
+    end
+
+    it "renders the body" do
+      expect(mail.body.encoded).to match(user2.handle)
+    end
+  end
 end

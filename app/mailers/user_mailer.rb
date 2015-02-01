@@ -20,4 +20,14 @@ class UserMailer < ActionMailer::Base
       format.text
     end
   end
+
+  def followed_email(user, followed)
+    @user = user
+    @followed = followed
+
+    mail(from: "jeff.j.stringer@gmail.com", to: followed.email, subject: "Fritter: You are being followed!") do |format|
+      format.html 
+      format.text
+    end
+  end
 end
