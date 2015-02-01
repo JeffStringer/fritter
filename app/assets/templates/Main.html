@@ -1,41 +1,40 @@
-<div ng-hide="!user" class="user-box">
-  <span>Logged in as {{user.username}}</span><br/>
-  <span>@{{user.handle}}</span>
-  <div ng-show="followings"><a href="#/following">Following:</a> {{followings.length}}</div>
-  <div ng-show="followers"><a href="#/followers">Followers:</a> {{followers.length}}</div>
-  <div ng-show="myMessages">Freets: {{myMessages.length}}</div>
+<div ng-show="!user" class="text">
+  <h2 id="fancy">The world is waiting to hear from you</h2>
 </div>
 
-<div ng-show="!user" class="col-md-12">
-  <h2>Welcome to Fritter! The world is your oyster.</h2>
-  <h4>Please login or signup.</h4>
+<div class="info">
+  <div ng-hide="!user" class="user-box">
+    <span>Logged in as {{user.username}}</span><br/>
+    <span>@{{user.handle}}</span>
+    <div ng-show="followings"><a href="#/following">Following:</a> {{followings.length}}</div>
+    <div ng-show="followers"><a href="#/followers">Followers:</a> {{followers.length}}</div>
+    <div ng-show="myMessages">Freets: {{myMessages.length}}</div>
+  </div>
+  <div ng-hide="!user || ((followings.length + 1) === users.length)" class="users-box">
+    <p>Who to follow</p>
+    <ul ng-repeat="item in filtered = (notFollowings | filter:query)">
+      <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
+      <form ng-submit="addFollows(item)" role="form">
+        <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
+      </form>
+    </ul>
+  </div>
 </div>
 
-<div ng-hide="!user" class="col-md-12">
+<div class="fweet" ng-hide="!user">
   <span ng-repeat="item in filtered = (errors | filter:query)">
     <span class="error" >{{item.error}}</span>
   </span>
   <form ng-if="user" id="messagesForm" ng-submit="addMessage()" class="form-inline" role="form" novalidate>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button id="message" type="submit" class="btn btn-default">Submit</button>
     <div class="form-group">
       <input type="text" name="message" ng-model="MessagesFactory.message" class="form-control" id="message-fweet" placeholder="What's happening?">
     </div>
   </form>
-  <div class="col-md-12">
-    <div class="fweet">
-      <ul ng-repeat="item in filtered = (messages | filter:query | orderBy: '-created_at')">
-        <p><span id="username">{{item.user.username}}</span><span id="remainder"> @{{item.user.handle}} * {{item.now}}</span></p>
-        <p id="fweet-end">{{item.fweet}}</p>
-      </ul>
-    </div>
+    <ul ng-repeat="item in filtered = (messages | filter:query | orderBy: '-created_at')">
+      <p><span id="username">{{item.user.username}}</span><span id="remainder"> @{{item.user.handle}} * {{item.now}}</span></p>
+      <p id="fweet-end">{{item.fweet}}</p>
+    </ul>
   </div>
 </div>
 
-<div ng-hide="!user || ((followings.length + 1) === users.length)" class="users-box">
-  <ul ng-repeat="item in filtered = (notFollowings | filter:query)">
-    <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
-    <form ng-submit="addFollows(item)" role="form">
-      <button type="submit" class="btn btn-default"><img src="/assets/add_person.png"> Follow</button>
-    </form>
-  </ul>
-</div>

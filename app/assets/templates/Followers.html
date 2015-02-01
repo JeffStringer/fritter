@@ -1,10 +1,10 @@
-<div ng-if="followers.length != 0" class="col-md-12">
+<div class="text" ng-if="followers.length != 0" class="col-md-12">
   <h4>{{user.username}}, you are being followed by:</h4>
   <ul ng-repeat="item in filtered = (followers | filter:query | orderBy: '-created_at')">
     <p><span id="username">{{item.username}}</span><span id="remainder"> @{{item.handle}}</span></p>
   </ul>
 </div>
 
-<div ng-if="followers.length === 0" class="col-md-12">
+<div class="text" ng-if="followers.length === 0" class="col-md-12">
   <h4>{{user.username}}, you have no current followers.</h4>
 </div>

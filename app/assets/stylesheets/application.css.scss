@@ -1,5 +1,6 @@
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400, );
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400);
+@import url(http://fonts.googleapis.com/css?family=Courgette);
 
 /* universal */
 
@@ -14,6 +15,7 @@ a.inside {
 }
 
 div.nav.container {
+  width: 900px;
   padding: 0;
   background-color: black;
   height: 40px;
@@ -22,14 +24,30 @@ div.nav.container {
 div.container {
   padding-top: 5px;
   margin-top: 80px;
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
+  border-radius: 5px;
+}
+
+div.text {
+  margin-top: 60px;
+  padding: 5px;
   background-color: #f6f6f6;
   border-radius: 5px;
 }
 
+#fancy {
+  font-family: 'Courgette', cursive;
+    text-align: center;
+}
+
 body {
   background-color: #7F0000;
+}
+
+div.col-md-12, div.col-md-6 {
+  margin-top: 60px;
+  padding-left: 0;
 }
 
 span.error {
@@ -61,15 +79,17 @@ div.collapse.navbar-collapse {
 }
 
 form#messagesForm.form-inline {
-  padding-left: 1px;
-  margin-left: 15px;
-  padding-top: 8px;
+  padding-top: 9px;
   background-color: #e6e6e6;
   height: 50px;
+  width: 630px;
+  border-radius: 5px;
 }
 
 input#message-fweet {
-  width: 648px;
+  padding-top: 9px;
+  margin-bottom: 0;
+  width: 550px;
 }
 
 input#message-fweet.form-control.ng-pristine.ng-untouched.ng-valid {
@@ -80,10 +100,8 @@ input.form-control {
   margin-bottom: 5px;
 }
 
-#add-message.btn {
-  background-color: orange;
-  color: white;
-  margin-bottom: 10px;
+button#message {
+  margin-top: 0;
 }
 
 div.user {
@@ -98,13 +116,29 @@ input.btn {
   margin-bottom: 2px;
 }
 
+div.info {
+  float: left;
+  width: 25%;
+}
+
 div.fweet {
+  margin-left: 25%;
+  margin-top: 60px;
   margin-right: 0;
-  width: 725px;
+  padding-left: 10px;
+  padding-right: 0;
+  width: 650px;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+}
+
+button#message {
+  margin-left: 3px;
 }
 
 ul.ng-scope {
-  padding-left: 0;
+  padding-left: 5px;
+  width: 625px;
 }
 
 p.ng-binding {
@@ -115,7 +149,8 @@ p.ng-binding {
 p#fweet-end {
   margin-right: 0;
   border-bottom: solid #d3d3d3;
-  border-width:thin;  
+  border-width:thin;
+  width: 100%  
 }
 
 span#username {
@@ -127,30 +162,28 @@ span#remainder {
 }
 
 .user-box {
-  position: fixed;
   padding-left: 10px;
-  padding-top: 20px;
-  margin-top: 71px;
-  margin-left: 10px;
-  top: 0;
-  left: 0;
-  width: 150px;
-  height: 130px;
-  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  background-color: #f6f6f6;
   border-radius: 5px;
 }
 
 .users-box {
-  position: fixed;
-  padding-left: 5px;
+  padding-left: 10px;
   padding-right: 5px;
-  padding-top: 20px;
-  margin-top: 71px;
-  margin-right: 10px;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: 180px;
-  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  width: 200px;
+  background-color: #f6f6f6;
   border-radius: 5px;
+  ul.ng-scope {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  p {
+    margin: 0;
+  }
 }

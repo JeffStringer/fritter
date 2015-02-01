@@ -6,7 +6,7 @@
   </span>
   <form name="form" ng-submit="register()" novalidate>
     <div class="row" class="form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <div class="error" ng-show="form.$submitted || form.uEmail.$touched">
           <span ng-show="form.uEmail.$error.required">Please enter your email.</span>
           <span ng-show="form.uEmail.$error.email">Please enter a valid email.</span>
@@ -15,7 +15,7 @@
       </div>  
     </div>
     <div class="row" class="form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <div class="error" ng-show="form.$submitted || form.uEmail.$touched">
           <span ng-show="form.uName.$error.required">Please enter your username.</span>
         </div>
@@ -23,7 +23,7 @@
       </div>  
     </div>
     <div class="row" class="form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <div class="error" ng-show="form.$submitted || form.uHandle.$touched">
           <span ng-show="form.uHandle.$error.required">Please enter a handle.</span>
         </div>
@@ -31,7 +31,7 @@
       </div>  
     </div>
     <div class="row" class="form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <div class="error" ng-show="form.$submitted || form.uPassword.$touched">
           <span ng-show="form.$submitted && user.password !== user.password_confirmation">Password and confirmation do not match.</span>
           <span ng-show="form.uPassword.$error.required">Please enter a password.</span>
@@ -40,7 +40,7 @@
       </div>  
     </div>
     <div class="row" class="form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <div class="error" ng-show="form.$submitted || form.uPasswordConf.$touched">
           <span ng-show="form.uPasswordConf.$error.required">Please enter password confirmation.</span>
         </div>
