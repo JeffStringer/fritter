@@ -14,6 +14,10 @@ a.inside {
   font-size: 1.2em;
 }
 
+a.link {
+  color: #82CC36;
+}
+
 div.nav.container {
   width: 900px;
   padding: 0;
@@ -31,14 +35,14 @@ div.container {
 
 div.text {
   margin-top: 60px;
-  padding: 5px;
+  padding: 10px;
   background-color: #f6f6f6;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #fancy {
   font-family: 'Courgette', cursive;
-    text-align: center;
+  text-align: center;
 }
 
 body {
@@ -50,17 +54,18 @@ div.col-md-12, div.col-md-6 {
   padding-left: 0;
 }
 
-span.error {
+span#error {
   margin-left: 15px;
   margin-bottom: 0;
+  color: red;
 }
 
 .error {
-  color: red;
+  color: #82CC36;
 }
 
 .error-registration {
-  color: red;
+  color: #82CC36;
   margin-left: 0;
 }
 
