@@ -15,7 +15,7 @@ class UserMailer < ActionMailer::Base
     @tagged = tagged
     @message = message
 
-    mail(from: "jeff.j.stringer@gmail.com", to: tagged.email, subject: "You were mentioned in a post!") do |format|
+    mail(from: "jeff.j.stringer@gmail.com", to: tagged.email, subject: "It's Fritter Time!") do |format|
       format.html 
       format.text
     end

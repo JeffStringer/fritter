@@ -21,7 +21,7 @@ RSpec.describe UserMailer, :type => :mailer do
     let(:mail) { UserMailer.tagged_email(user2, user, message2) }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("You were mentioned in a post!")
+      expect(mail.subject).to eq("It's Fritter Time!")
       expect(mail.to).to eq(["user@gmail.com"])
       expect(mail.from).to eq(["jeff.j.stringer@gmail.com"])
     end
