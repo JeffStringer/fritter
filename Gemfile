@@ -16,6 +16,7 @@ gem 'rb-readline'
 gem 'devise'
 gem 'figaro'
 gem 'gibbon'
+gem 'rails_12factor'
 
 group :development do
   gem 'better_errors'
