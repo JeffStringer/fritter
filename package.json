@@ -13,7 +13,7 @@
     "npm": "2.1.11"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "./vender/assets/bower_components/bower install"
   },
   "repository": {
     "type": "git",
