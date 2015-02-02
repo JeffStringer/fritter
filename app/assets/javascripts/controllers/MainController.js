@@ -90,5 +90,6 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, $route, Fol
         var errorMessage = "message " + error;
         $scope.errors.push({error: errorMessage});
       }); 
+      $route.reload();
     } 
 });
