@@ -2,9 +2,6 @@
   "name": "Fritter",
   "version": "1.0.0",
   "description": "twitter clone",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
     "bower": "1.3.12"
   },
@@ -13,7 +10,7 @@
     "npm": "2.1.11"
   },
   "scripts": {
-    "postinstall": "./vender/assets/bower_components/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -24,7 +21,7 @@
     "AngularJS"
   ],
   "author": "Jeff Stringer",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/JeffStringer/fritter/issues"
   },
