@@ -1,0 +1,25 @@
+{
+  "name": "Fritter",
+  "version": "1.0.0",
+  "description": "twitter clone",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeffStringer/fritter.git"
+  },
+  "keywords": [
+    "Rails",
+    "AngularJS"
+  ],
+  "author": "Jeff Stringer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffStringer/fritter/issues"
+  },
+  "homepage": "https://github.com/JeffStringer/fritter"
+}
