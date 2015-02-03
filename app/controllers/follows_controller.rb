@@ -23,7 +23,7 @@ class FollowsController < ApplicationController
   def create
     @user = User.find(params["user_id"])
     @following = @user.followers.new(follower_id: current_user.id)
-    UserMailer.followed_email(current_user, @user).deliver
+    # UserMailer.followed_email(current_user, @user).deliver
 
     if @following.save
       respond_to do |format|
