@@ -17,6 +17,7 @@
 //= require angular-rails-templates
 //= require angular-devise/lib/devise
 //= require moment/min/moment.min
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require app
 //= require_tree ../templates
 //= require_tree .
