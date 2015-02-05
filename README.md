@@ -9,7 +9,7 @@ Fritter mimics the basic functionality of Twitter. Similar to Twitter, users can
 Thanks for asking! Fritter is an Angular on Rails app, which means I constructed an API using Ruby on Rails which is consumed by AngularJS. I used Bower to handle front-end dependencies including AngularJS, AngularDevise for user authentication, Bootstrap-Saas, and Moment.js to convert time to a readable format from JavaScript.
 
 ##Explore Fritter
-[myfritter.herokuapp.com](http://www.myfritter.herokuapp.com)
+[myfritter.herokuapp.com](http://myfritter.herokuapp.com)
 
 
 ##Author
