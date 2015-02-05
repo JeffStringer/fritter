@@ -79,7 +79,6 @@ Rails.application.configure do
 
   # email enabled in production
   config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {domain: 'myfritter.herokuapp.com'}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 end
