@@ -1,6 +1,15 @@
 class UserMailer < ActionMailer::Base
   default from: "do-not-reply@example.com"
 
+  def signup_email(user)
+    @user = user
+
+    mail(to: user.email, from: "jeff.j.stringer@gmail.com", subject: "Welcome to Fritter!") do |format|
+      format.html 
+      format.text
+    end   
+  end
+
   def user_email(user)
     @user = user
 

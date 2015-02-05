@@ -1,5 +1,20 @@
 RSpec.describe UserMailer, :type => :mailer do
-  describe "email admin receives upon new user signing up" do
+  describe "email sent to user when user signs up" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:mail) { UserMailer.signup_email(user) }
+
+    it "renders the headers" do
+      expect(mail.subject).to eq("Welcome to Fritter!")
+      expect(mail.to).to eq(["user@gmail.com"])
+      expect(mail.from).to eq(["jeff.j.stringer@gmail.com"])
+    end
+
+    it "renders the body" do
+      expect(mail.body.encoded).to match(user.username)
+    end
+  end
+
+  describe "email sent to admin when new user signs up" do
     let(:user) { FactoryGirl.create(:user) }
     let(:mail) { UserMailer.user_email(user) }
 

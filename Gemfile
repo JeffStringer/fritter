@@ -14,7 +14,7 @@ gem 'bcrypt'
 gem 'rb-readline'
 gem 'devise'
 gem 'figaro'
-gem 'gibbon'
+gem 'mailgunner'
 gem 'rails_12factor'
 
 group :development do
