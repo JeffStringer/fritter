@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
       unless handle.nil?
         handle.slice!(0)
         tagged = User.find_by(handle: handle)
-        # UserMailer.tagged_email(current_user, tagged, @message.fweet).deliver
+        UserMailer.tagged_email(current_user, tagged, @message.fweet).deliver
       end
     end
 
