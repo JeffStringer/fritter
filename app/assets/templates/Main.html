@@ -31,10 +31,9 @@
       <input type="text" name="message" ng-model="MessagesFactory.message" class="form-control" id="message-fweet" placeholder="What's happening?">
     </div>
   </form>
-    <ul ng-repeat="item in filtered = (messages | filter:query | orderBy: '-created_at')">
-      <p><span id="username">{{item.user.username}}</span><span id="remainder"> @{{item.user.handle}} * {{item.now}}</span></p>
-      <p id="fweet-end">{{item.fweet}}</p>
-    </ul>
-  </div>
+  <ul ng-repeat="item in filtered = (messages | filter:query | orderBy: '-created_at')">
+    <p><span id="username">{{item.user.username}}</span><span id="remainder"> @{{item.user.handle}} * {{item.now}}</span></p>
+    <p id="fweet-end">{{item.fweet}}</p>
+  </ul>
 </div>
 

@@ -83,13 +83,13 @@ Fritter.controller('MainCtrl', function MainController(Auth, $scope, $route, Fol
       .success(function(data) {
         $scope.messages.push({fweet: MessagesFactory.message, user: $scope.user, now: moment(data.created_at).startOf('minute').fromNow()});
           MessagesFactory.message = null;
+          console.log($scope.messages)
       })
       .error(function(data) {
         $scope.errors = [];
         var error = data.errors.fweet.pop();
         var errorMessage = "message " + error;
         $scope.errors.push({error: errorMessage});
-      }); 
-      $route.reload();
+      });
     } 
 });
