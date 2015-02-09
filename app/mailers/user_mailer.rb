@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def signup_email(user)
     @user = user
 
-    mail(to: user.email, from: "jeff.j.stringer@gmail.com", subject: "Welcome to Fritter!") do |format|
+    mail(to: user.email, from: "Fritter <jeff.j.stringer@gmail.com>", subject: "Welcome to Fritter!") do |format|
       format.html 
       format.text
     end   
@@ -24,7 +24,7 @@ class UserMailer < ActionMailer::Base
     @tagged = tagged
     @message = message
 
-    mail(from: "jeff.j.stringer@gmail.com", to: tagged.email, subject: "It's Fritter Time!") do |format|
+    mail(from: "Fritter <jeff.j.stringer@gmail.com>", to: tagged.email, subject: "It's Fritter Time!") do |format|
       format.html 
       format.text
     end
@@ -34,7 +34,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @followed = followed
 
-    mail(from: "jeff.j.stringer@gmail.com", to: followed.email, subject: "Fritter: You are being followed!") do |format|
+    mail(from: "Fritter <jeff.j.stringer@gmail.com>", to: followed.email, subject: "Fritter: You are being followed!") do |format|
       format.html 
       format.text
     end
